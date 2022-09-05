@@ -1,6 +1,6 @@
 # Explorer_projeto07_SPA_Universe
 
-## Git Favorites - An Aplication to save our favorites users of github
+## Git Favorites - An Aplication to save our favorite users of github
 
 ## Under Construction, come back later!
 
