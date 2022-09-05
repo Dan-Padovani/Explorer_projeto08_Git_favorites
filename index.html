@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Git Favorites</title>
+
+	<link rel="stylesheet" href="./app/css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+	<script src="./app/js/main.js" type="module" defer></script>
+
+</head>
+<body>
+	<div id="app">
+		<header>
+			<img src="./app/assets/Gitfav.svg" alt="imagem de estre entre chaves seguido do texto GitFav">
+			<div class="search">
+				<label class="sr-only" for="input-search">Digite o Github username que quer favoritar</label>
+				<input id="input-search" type="text" placeholder="Digite o Github username que quer favoritar">
+				<button>
+					<img src="./app/assets/star.svg" alt="imagem de uma estrela">
+					Favoritar
+				</button>
+			</div>
+		</header>
+		<div class="table-wrapper">
+
+			<table>
+				<thead>
+					<tr>
+						<th>Usuário</th>
+						<th>Repositories</th>
+						<th>Followers</th>
+						<th>Ação</th>
+					</tr>
+				</thead>
+				<tbody>
+<!-- 					
+					<tr>
+						<td colspan="4">
+							<div class="no-favorite">
+								<img src="./app/assets/Estrela.svg" alt="imagem de uma estrela com a boca aberta expressando um oh">
+								<p>Nenhum favorito ainda</p>
+							</div>
+						</td>
+					</tr>
+-->
+
+
+					<tr>
+						<td class="user">
+							<img src="https://github.com/Dan-Padovani.png" alt="imagem de Dan-Padovani">
+							<a href="https://github.com/Dan-Padovani" target="_blank">
+								<p>Daniel Padovani</p>
+								<span>Dan-Padovani</span>
+							</a>
+						</td>
+						<td class="repositories">
+							28
+						</td>
+						<td class="followers">
+							12
+						</td>
+						<td>
+							<p class="remove">Remover</p>
+						</td>
+					</tr>
+			
+					<tr>
+						<td class="user">
+							<img src="https://github.com/diego3g.png" alt="imagem de dan-padovani">
+							<a href="https://github.com/diego3g" target="_blank">
+								<p>Diego Fernades</p>
+								<span>diego3g</span>
+							</a>
+						</td>
+						<td class="repositories">
+							48
+						</td>
+						<td class="followers">
+							22503
+						</td>
+						<td>
+							<p class="remove">Remover</p>
+						</td>
+					</tr>
+	
+					<tr>
+						<td class="user">
+							<img src="https://github.com/Dan-Padovani.png" alt="imagem de Dan-Padovani">
+							<a href="https://github.com/Dan-Padovani" target="_blank">
+								<p>Daniel Padovani</p>
+								<span>Dan-Padovani</span>
+							</a>
+						</td>
+						<td class="repositories">
+							28
+						</td>
+						<td class="followers">
+							12
+						</td>
+						<td>
+							<p class="remove">Remover</p>
+						</td>			
+					</tr> 
+
+
+					<!-- 		
+					<tr>
+						<td class="user">
+							<img src="https://github.com/diego3g.png" alt="imagem de dan-padovani">
+							<a href="https://github.com/diego3g" target="_blank">
+								<p>Diego Fernades</p>
+								<span>diego3g</span>
+							</a>
+						</td>
+						<td class="repositories">
+							48
+						</td>
+						<td class="followers">
+							22503
+						</td>
+						<td>
+							<p class="remove">Remover</p>
+						</td>
+					</tr>
+	
+					<tr>
+						<td class="user">
+							<img src="https://github.com/Dan-Padovani.png" alt="imagem de Dan-Padovani">
+							<a href="https://github.com/Dan-Padovani" target="_blank">
+								<p>Daniel Padovani</p>
+								<span>Dan-Padovani</span>
+							</a>
+						</td>
+						<td class="repositories">
+							28
+						</td>
+						<td class="followers">
+							12
+						</td>
+						<td>
+							<p class="remove">Remover</p>
+						</td>			
+					</tr>
+			
+					<tr>
+						<td class="user">
+							<img src="https://github.com/diego3g.png" alt="imagem de dan-padovani">
+							<a href="https://github.com/diego3g" target="_blank">
+								<p>Diego Fernades</p>
+								<span>diego3g</span>
+							</a>
+						</td>
+						<td class="repositories">
+							48
+						</td>
+						<td class="followers">
+							22503
+						</td>
+						<td>
+							<p class="remove">Remover</p>
+						</td>
+					</tr>
+	
+					<tr>
+						<td class="user">
+							<img src="https://github.com/Dan-Padovani.png" alt="imagem de Dan-Padovani">
+							<a href="https://github.com/Dan-Padovani" target="_blank">
+								<p>Daniel Padovani</p>
+								<span>Dan-Padovani</span>
+							</a>
+						</td>
+						<td class="repositories">
+							28
+						</td>
+						<td class="followers">
+							12
+						</td>
+						<td>
+							<p class="remove">Remover</p>
+						</td>			
+					</tr>
+			
+					<tr>
+						<td class="user">
+							<img src="https://github.com/diego3g.png" alt="imagem de dan-padovani">
+							<a href="https://github.com/diego3g" target="_blank">
+								<p>Diego Fernades</p>
+								<span>diego3g</span>
+							</a>
+						</td>
+						<td class="repositories">
+							48
+						</td>
+						<td class="followers">
+							22503
+						</td>
+						<td>
+							<p class="remove">Remover</p>
+						</td>
+					</tr> 
+-->
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+</body>
+</html>
