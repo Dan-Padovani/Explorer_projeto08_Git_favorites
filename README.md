@@ -2,7 +2,7 @@
 
 ## Git Favorites - An Aplication to save our favorites users of github
 
-## Under COntruction, come back later!
+## Under Construction, come back later!
 
 
 
