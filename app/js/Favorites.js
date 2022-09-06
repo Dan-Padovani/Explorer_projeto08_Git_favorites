@@ -19,7 +19,22 @@ export class FavoritesView extends Favorites {
 		super(root) 
 
 		//console.log(this.root)
+		
 		this.tbody = document.querySelector('table tbody')
-		console.log(this.tbody)
+		//console.log(this.tbody)
+
+		this.update()
+		
+	}
+
+	update() {
+
+		this.removeTableRows()
+	}
+
+	removeTableRows() {
+		this.tbody.querySelectorAll('tr').forEach(tr => {
+			console.log(tr)
+		});
 	}
 }
