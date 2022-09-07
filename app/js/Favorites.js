@@ -14,30 +14,43 @@ class Favorites {
 	}
 
 	load() {
-		this.entries = [
-			{
-				login: 'maykbrito',
-				name: 'Mayk Brito',
-				public_repos: '76',
-				followers: '80000'
-			},
-			{
-				login: 'dan-padovani',
-				name: 'Dan-Padovani',
-				public_repos: '18',
-				followers: '12'
-			},
-			{
-				login: 'diego3g',
-				name: 'Diego Fernandes',
-				public_repos: '16',
-				followers: '120000'
-			}
-		]
+
+		this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
+
+		// this.entries = [
+		// 	{
+		// 		login: 'maykbrito',
+		// 		name: 'Mayk Brito',
+		// 		public_repos: '76',
+		// 		followers: '80000'
+		// 	},
+		// 	{
+		// 		login: 'dan-padovani',
+		// 		name: 'Dan-Padovani',
+		// 		public_repos: '18',
+		// 		followers: '12'
+		// 	},
+		// 	{
+		// 		login: 'diego3g',
+		// 		name: 'Diego Fernandes',
+		// 		public_repos: '16',
+		// 		followers: '120000'
+		// 	}
+		// ]
+	}
+
+	save() {
+		localStorage.setItem('@github-favorites:', JSON.stringify(this.entries))
 	}
 
 	removeUser(user) {
-		console.log('até aqui ok e o user é = ', user)
+
+		const filteredUsers = this.entries
+		.filter(entry => entry.login !== user.login)
+		
+		this.entries = filteredUsers
+		this.update()
+		this.save()
 	}
 }
 
