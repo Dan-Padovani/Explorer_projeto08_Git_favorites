@@ -1,6 +1,9 @@
 // Consulta user github
 class GithubUser {
 	static search(username) {
+		const endpoint = `https://api.github.com/users/${username}`
+
+		return endpoint
 		
 	}
 }
@@ -14,29 +17,7 @@ class Favorites {
 	}
 
 	load() {
-
 		this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
-
-		// this.entries = [
-		// 	{
-		// 		login: 'maykbrito',
-		// 		name: 'Mayk Brito',
-		// 		public_repos: '76',
-		// 		followers: '80000'
-		// 	},
-		// 	{
-		// 		login: 'dan-padovani',
-		// 		name: 'Dan-Padovani',
-		// 		public_repos: '18',
-		// 		followers: '12'
-		// 	},
-		// 	{
-		// 		login: 'diego3g',
-		// 		name: 'Diego Fernandes',
-		// 		public_repos: '16',
-		// 		followers: '120000'
-		// 	}
-		// ]
 	}
 
 	save() {
@@ -70,7 +51,6 @@ export class FavoritesView extends Favorites {
 	update() {
 
 		this.removeTableRows()
-		
 
 		this.entries.forEach(user => {
 			const row = this.createRows()
