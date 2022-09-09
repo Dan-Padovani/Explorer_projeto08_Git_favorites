@@ -88,12 +88,9 @@ header {
 	width: min(85vw, 112rem);
 	margin: 0 auto;
 	max-height: 58.6rem;
-	overflow: overlay;
+	overflow-y: overlay;
 	border: 1px solid #4A808C;
 	border-radius: 12px;
-}
-
-table * {
 }
 
 table {
