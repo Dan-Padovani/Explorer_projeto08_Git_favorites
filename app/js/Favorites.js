@@ -26,7 +26,29 @@ class Favorites {
 
 		this.load()
 
-		GithubUser.search('dan-padovani').then(user => console.log(user))
+		
+	}
+	
+	async add(username) {
+		try {
+			const userExistis = this.entries.find(entry => entry.login === username)
+
+			if(userExistis) {
+				throw new Error('Usuário já está na lista')
+			}
+			const user = await GithubUser.search(username)
+
+			if(user.login === undefined) {
+				throw new Error('Usuário não encontrado')
+			}
+			
+			this.entries = [user, ...this.entries]
+			this.update()
+			this.save()
+
+		} catch(error) {
+			alert(error.message)
+		}
 	}
 
 	load() {
