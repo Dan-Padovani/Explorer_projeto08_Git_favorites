@@ -3,7 +3,18 @@ class GithubUser {
 	static search(username) {
 		const endpoint = `https://api.github.com/users/${username}`
 
-		return endpoint
+		return fetch(endpoint)
+		.then(data => data.json())
+		.then(data => {
+			const { login, name, public_repos, followers } = data
+
+			return {
+				login,
+				name,
+				public_repos,
+				followers
+			}
+		})
 		
 	}
 }
@@ -14,10 +25,13 @@ class Favorites {
 		this.root = document.querySelector(root)
 
 		this.load()
+
+		GithubUser.search('dan-padovani').then(user => console.log(user))
 	}
 
 	load() {
 		this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
+		
 	}
 
 	save() {
@@ -41,12 +55,22 @@ export class FavoritesView extends Favorites {
 	constructor(root) {
 		super(root) 
 
-
 		this.tbody = document.querySelector('table tbody')
-		
+
 		this.update()
-		
+		this.onAdd()
+				
 	}
+
+	onAdd() {
+		const addNewUser = this.root.querySelector('#add-user-button')
+		addNewUser.onclick = () => {
+			const { value } = this.root.querySelector('#input-search')
+			
+			this.add(value)
+		}
+	}
+	
 
 	update() {
 
