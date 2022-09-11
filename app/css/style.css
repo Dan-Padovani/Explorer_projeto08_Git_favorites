@@ -62,7 +62,7 @@ header {
 	border-width: 0;
 }
 
-.search button {
+#add-user-button {
 
 	display: flex;
 	align-items: center;
@@ -83,6 +83,16 @@ header {
 	height: 4.8rem;
 
 	cursor: pointer;
+	transition: .4s;
+}
+
+#add-user-button:hover {
+	color: #065E7C;
+	background-color: #FFF;
+}
+
+#add-user-button:hover > svg *{
+	fill: #065E7C;
 }
 
 .table-wrapper {
