@@ -1,22 +1,4 @@
-// Consulta user github
-class GithubUser {
-	static search(username) {
-		const endpoint = `https://api.github.com/users/${username}`
-
-		return fetch(endpoint)
-		.then(data => data.json())
-		.then(data => {
-			const { login, name, public_repos, followers } = data
-
-			return {
-				login,
-				name,
-				public_repos,
-				followers
-			}
-		})
-	}
-}
+import { GithubUser } from "./GithubUSer.js"
 
 // Construçao dos dados da aplicação
 class Favorites {
