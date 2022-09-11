@@ -1,6 +1,6 @@
-import { GithubUser } from "./GithubUSer.js"
+import { GithubUser } from "./GithubUser.js"
 
-// Construçao dos dados da aplicação
+// Building data aplication
 class Favorites {
 	constructor(root) {
 		this.root = document.querySelector(root)
@@ -50,14 +50,13 @@ class Favorites {
 }
 
 
-// Construção do html da aplicação
+// Html Constructor
 export class FavoritesView extends Favorites {
 	constructor(root) {
 		super(root) 
 		this.tbody = document.querySelector('table tbody')
 		this.update()
 		this.onAdd()
-		//this.createEmptyFavorite()		
 	}
 
 	onAdd() {
@@ -71,15 +70,12 @@ export class FavoritesView extends Favorites {
 	update() {
 
 		this.removeTableRows()
+		const entriesIsEmpty = this.entries.length <= 0
 
-		//code here to test for empty condition
-		if (this.entries.length <= 0) {
-			const emptyRow = this.createEmptyFavorite()
-			this.tbody.append(emptyRow)
+		if(entriesIsEmpty) {
+			const noFavoriteRow = this.createEmptyFavorite()
+			this.tbody.append(noFavoriteRow)
 		}
-		
-		
-		console.log(this.entries.length)
 
 		this.entries.forEach(user => {
 			const row = this.createRows()

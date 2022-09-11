@@ -1,4 +1,4 @@
-// Consulta user github
+// Search for github user and API
 export class GithubUser {
 	static search(username) {
 		const endpoint = `https://api.github.com/users/${username}`
