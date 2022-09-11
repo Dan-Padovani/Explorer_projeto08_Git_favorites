@@ -15,7 +15,6 @@ class GithubUser {
 				followers
 			}
 		})
-		
 	}
 }
 
@@ -23,10 +22,7 @@ class GithubUser {
 class Favorites {
 	constructor(root) {
 		this.root = document.querySelector(root)
-
 		this.load()
-
-		
 	}
 	
 	async add(username) {
@@ -76,27 +72,32 @@ class Favorites {
 export class FavoritesView extends Favorites {
 	constructor(root) {
 		super(root) 
-
 		this.tbody = document.querySelector('table tbody')
-
 		this.update()
 		this.onAdd()
-				
+		//this.createEmptyFavorite()		
 	}
 
 	onAdd() {
 		const addNewUser = this.root.querySelector('#add-user-button')
 		addNewUser.onclick = () => {
 			const { value } = this.root.querySelector('#input-search')
-			
 			this.add(value)
 		}
 	}
-	
 
 	update() {
 
 		this.removeTableRows()
+
+		//code here to test for empty condition
+		if (this.entries.length <= 0) {
+			const emptyRow = this.createEmptyFavorite()
+			this.tbody.append(emptyRow)
+		}
+		
+		
+		console.log(this.entries.length)
 
 		this.entries.forEach(user => {
 			const row = this.createRows()
@@ -142,6 +143,20 @@ export class FavoritesView extends Favorites {
 		</td>
 		<td>
 			<p class="remove">Remover</p>
+		</td>
+		`
+		return tr
+	}
+
+	createEmptyFavorite() {
+		const tr = document.createElement('tr')
+
+		tr.innerHTML = `
+		<td colspan="4">
+			<div class="no-favorite">
+				<img src="./app/assets/Estrela.svg" alt="imagem de uma estrela com a boca aberta expressando um oh">
+				<p>Nenhum favorito ainda</p>
+			</div>
 		</td>
 		`
 		return tr
