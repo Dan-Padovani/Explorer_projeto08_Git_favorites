@@ -204,3 +204,16 @@ td.user a span {
 	width: 100%;
 	color: #4e5455;
 }
+
+
+@media (max-width: 950px) {
+	header {
+		flex-wrap: wrap;
+		margin: 7.5rem auto 5rem;
+	}
+
+	.search {
+		width: min(86vw, 95rem);
+		justify-content: space-between;
+	}
+}
