@@ -53,7 +53,7 @@ I had the oportunity to practice and study:
 
 Just access the link bellow. 
 
-<a href="https://danp/" target="_blank">GitFav</a>
+<a href="https://dan-padovani.github.io/Explorer_projeto08_Git_favorites/" target="_blank">GitFav</a>
 
 ---
 
