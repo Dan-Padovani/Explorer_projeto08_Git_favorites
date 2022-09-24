@@ -18,7 +18,7 @@ Using the github API to search, we can add or remove our users
 The page saves this information in local storage of browser.
 
 I had the oportunity to practice and study:
-* Build Constructor Classes;
+* Constructor Classes;
 * Promisses with Async Await;
 * Try, catch and throw;
 * Github API;
