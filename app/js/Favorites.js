@@ -38,7 +38,7 @@ class Favorites {
 		localStorage.setItem('@github-favorites:', JSON.stringify(this.entries))
 	}
 
-	removeUser(user) {
+	delete(user) {
 
 		const filteredUsers = this.entries
 		.filter(entry => entry.login !== user.login)
@@ -64,6 +64,7 @@ export class FavoritesView extends Favorites {
 		addNewUser.onclick = () => {
 			const { value } = this.root.querySelector('#input-search')
 			this.add(value)
+			this.root.querySelector('#input-search').value = ''
 		}
 	}
 
@@ -84,16 +85,16 @@ export class FavoritesView extends Favorites {
 			row.querySelector('.user img').alt = `Imagem de ${user.name}`
 			row.querySelector('.user a').href = `https://github.com/${user.login}`
 			row.querySelector('.user p').textContent = user.name
-			row.querySelector('.user span').textContent = user.login
+			row.querySelector('.user span').textContent = `/${user.login}`
 			row.querySelector('.repositories').textContent = user.public_repos
 			row.querySelector('.followers').textContent = user.followers
 
 			//delete current row
 			row.querySelector('.remove').onclick = () => {
-				const isItOk = confirm('Tem certeza que deseja deletar este usuario dos seus favoritos?')
+				const canIDelete = confirm('Tem certeza que deseja deletar este usuário?')
 
-				if(isItOk) {
-					this.removeUser(user)
+				if(canIDelete) {
+					this.delete(user)
 				}
 			}
 

@@ -41,8 +41,9 @@ I had the oportunity to practice and study:
 
 ### Tablet and Mobile
 
-<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center; flex-direction: column; align-items: center">
 	<img alt="tablet version" src="./app/assets/IpadGitfav.gif" width="500px">
+	<br>
 	<img alt="mobile version" src="./app/assets/MobileGitfav.gif" width="300px">
 </p>
 
