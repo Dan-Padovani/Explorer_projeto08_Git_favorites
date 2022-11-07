@@ -26,7 +26,7 @@ I had the oportunity to practice and study:
 * Using local storage;
 * Using fetch() and .then() - as a basic API;
 *	Callbacks functions;
-* Work with HTML tables;
+* Working with HTML tables;
 *	ES6 Modules.
 
 ---
